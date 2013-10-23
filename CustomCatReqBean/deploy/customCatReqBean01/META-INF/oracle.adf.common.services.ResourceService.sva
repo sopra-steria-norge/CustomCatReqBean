@@ -1,0 +1,5 @@
+#:__PROLOG__:ADF_LibraryDependencies:ADF_Connections:ADF_TaskFlow
+#:__EPILOG__:
+oracle.adf.library.rc.dependencies.LibDepsServiceStrategy ADF_LibraryDependencies
+oracle.adf.library.rc.connections.CAServiceStrategy ADF_Connections
+oracle.adf.controller.rc.TaskFlowResourceServiceStrategy ADF_TaskFlow

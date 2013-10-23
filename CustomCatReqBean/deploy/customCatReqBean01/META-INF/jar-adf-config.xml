@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adf-config
+  xmlns="http://xmlns.oracle.com/adf/config"
+  xmlns:jndi="http://xmlns.oracle.com/adf/jndi/config"
+  xmlns:sec="http://xmlns.oracle.com/adf/security/config"
+>
+  <!-- configure the credential store -->
+  <sec:adf-config-child xmlns="http://xmlns.oracle.com/adf/security/config">
+  </sec:adf-config-child>
+  <!-- configure the Connection Architecture -->
+  <jndi:adf-jndi-config
+      xmlns="http://xmlns.oracle.com/adf/jndi/config">
+    <jndi:ConnectionsJndiContext
+      initialContextFactoryClass="oracle.adf.share.jndi.InitialContextFactoryImpl"
+      backingStoreURL="./jar-connections.xml"
+      backingStoreClass="oracle.adf.share.jndi.JarFileBackingStore">
+    </jndi:ConnectionsJndiContext>
+  </jndi:adf-jndi-config>
+</adf-config>

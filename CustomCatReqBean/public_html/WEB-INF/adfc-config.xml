@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <managed-bean id="__1">
+    <managed-bean-name id="__3">customCatStateBean</managed-bean-name>
+    <managed-bean-class id="__4">no.steria.tad.view.CustomCatStateBean</managed-bean-class>
+    <managed-bean-scope id="__5">session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__11">
+    <managed-bean-name id="__13">itemBean</managed-bean-name>
+    <managed-bean-class id="__14">no.steria.tad.view.ItemBean</managed-bean-class>
+    <managed-bean-scope id="__15">backingBean</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__21">
+    <managed-bean-name id="__23">orgItemStateBean</managed-bean-name>
+    <managed-bean-class id="__24">no.steria.tad.view.OrgItemStateBean</managed-bean-class>
+    <managed-bean-scope id="__25">session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__31">
+    <managed-bean-name id="__33">regionLOVBean</managed-bean-name>
+    <managed-bean-class id="__34">no.steria.tad.view.RegionLOVBean</managed-bean-class>
+    <managed-bean-scope id="__35">session</managed-bean-scope>
+  </managed-bean>
+</adfc-config>
