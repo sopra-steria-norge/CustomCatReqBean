@@ -30,7 +30,8 @@ import javax.faces.context.FacesContext;
 
 import oracle.adf.view.rich.component.rich.input.RichInputListOfValues;
 
-import oracle.adfinternal.view.faces.model.binding.FacesCtrlLOVBinding;
+//import oracle.adfinternal.view.faces.model.binding.FacesCtrlLOVBinding;
+import oracle.jbo.uicli.binding.JUCtrlAttrsBinding;
 
 import oracle.iam.platform.OIMClient;
 import oracle.iam.platform.Platform;
@@ -124,7 +125,12 @@ public class OrgItemStateBean extends BaseMB{
             Application application = fctx.getApplication();
             ExpressionFactory exprFactory = application.getExpressionFactory(); 
             ValueExpression valueExpr = exprFactory.createValueExpression(elctx,"#{bindings.lov_ds_act_key__c}",Object.class);
-            FacesCtrlLOVBinding fclb =  (FacesCtrlLOVBinding)valueExpr.getValue(elctx);
+            //FacesCtrlLOVBinding fclb =  (FacesCtrlLOVBinding)valueExpr.getValue(elctx);
+            
+            //Changed FacesCtrlLovBinding to JUCtrlAttrsBinding, becauseFacesCtrlLovBinding gave error in interface: 
+            //JBO-27010: Attributtet som er angitt med verdien oracle.adfinternal.view.faces.model.binding.FacesCtrlAttrsBinding incompatible with oracle.adfinternal.view.faces.model.binding.FacesCtrlLOVBinding for tad_gdisk__c i CatalogAM.userVO, har ugyldig presisjon/skala
+            JUCtrlAttrsBinding fclb =  (JUCtrlAttrsBinding)valueExpr.getValue(elctx);
+
             search.put("Lookup Definition.Lookup Code Information.Decode",fclb.getInputValue().toString());
             Thor.API.tcResultSet rs = lookupTypeService.getLookupValues(lookup,search);
             int rowCount = rs.getTotalRowCount();
